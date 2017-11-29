@@ -12,43 +12,6 @@ def cleanhtml(raw_html):
     soup = BeautifulSoup(raw_html, "html5lib");
     return soup.get_text()
 
-#get greenwich mean time
-def getGmt():
-    endpoint = "http://api.timezonedb.com/v2/get-time-zone"
-    key = "I1IL8FGV1FXS"
-    format = "json"
-    zone = "UTC"
-    request = endpoint + "?key=" + key + "&format=" + format + "&by=zone&zone=" + zone
-    print("Request: ", request, end="\r")
-    connection = urllib.request.urlopen(request)
-    response = json.loads(connection.read())
-    connection.close()
-    return datetime.datetime.fromtimestamp(response["timestamp"])
- 
-
-    
-#all this for the sake of modularity
-endpoint = "https://tuftsdaily.com/wp-json/wp/v2/tags"
-per_page_value = 100  #1 to 100 inclusive
-per_page = "?per_page=" + str(per_page_value)
-offset = "&offset="
-responses = []
-iteration = 0
-while True:
-    request = endpoint + per_page + offset + str(iteration * per_page_value) 
-    print("Request: ", request, end="\r")
-    connection = urllib.request.urlopen(request)
-    response_array = json.loads(connection.read())
-    connection.close()
-    
-    if(len(response_array) == 0):
-        break
-    else:
-        # print(len(response_array), "response gotten from connection", end="\r")
-        #shallow copying arrays, hopefully ends out okay
-        responses += response_array
-        iteration += 1
-
 def dumpJsonAry(jsons, filename):
     file = codecs.open(filename, "w", "utf-8-sig")
     file.write("[")
@@ -57,10 +20,6 @@ def dumpJsonAry(jsons, filename):
         file.write(",\n")
     file.write("]")
     file.close()
-    
-
-#dumps unprocessed json array to file
-dumpJsonAry(responses, "tags_raw.json")
 
 def cleanResponse(json):
     del json["_links"]
@@ -71,6 +30,30 @@ def cleanResponse(json):
     del json["taxonomy"]
     return json
 
+#all this for the sake of modularity
+endpoint = "https://tuftsdaily.com/wp-json/wp/v2/tags"
+per_page_value = 100  #1 to 100 inclusive
+per_page = "?per_page=" + str(per_page_value)
+offset = "&offset="
+responses = []
+iteration = 0
+while True:
+    request = endpoint + per_page + offset + str(iteration * per_page_value)
+    print("Request: ", request, end="\r")
+    connection = urllib.request.urlopen(request)
+    response_array = json.loads(connection.read())
+    connection.close()
+
+    if(len(response_array) == 0):
+        break
+    else:
+        # print(len(response_array), "response gotten from connection", end="\r")
+        #shallow copying arrays, hopefully ends out okay
+        responses += response_array
+        iteration += 1
+
+#dumps unprocessed json array to file
+dumpJsonAry(responses, "tags_raw.json")
 response_length = len(responses)
 index = 0
 cleaned_responses = []
@@ -81,7 +64,5 @@ for x in responses:
         cleaned_responses.append(cleanResponse(x))
     index += 1
     print_progress(index, response_length, prefix = "Cleaning up jsons: ", bar_length=80)
-    
-    
-dumpJsonAry(cleaned_responses, "tags_cleaned.json")
 
+dumpJsonAry(cleaned_responses, "tags_cleaned.json")
