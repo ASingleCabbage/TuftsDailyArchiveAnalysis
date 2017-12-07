@@ -104,14 +104,17 @@ def main():
     response_length = len(responses)
     index = 0
     #clean up jsons
+    responses_clean = []
     for x in responses:
         x = cleanResponse(x)
+        if (x["content_text"] != "\n"):
+            responses_clean.append(x)
         index += 1
         print_progress(index, response_length, prefix = "Cleaning up jsons: ", bar_length=80)
 
-    responses = updateMetadata(responses)
+    responses_clean = updateMetadata(responses_clean)
 
-    dumpJsonAry(responses, "posts_sample.db")
+    dumpJsonAry(responses_clean, "posts_sample.db")
 
 if __name__ == "__main__":
     main()
