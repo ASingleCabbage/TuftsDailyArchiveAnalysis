@@ -23,6 +23,7 @@ def analyze(post):
         type=enums.Document.Type.PLAIN_TEXT)
     # Detects the sentiment of the text
     sentiment = client.analyze_sentiment(document=document).document_sentiment
+    print(sentiment)
     analysis = {}
     analysis["sentiment_score"] = sentiment.score
     analysis["sentiment_magnitude"] = sentiment.magnitude

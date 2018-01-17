@@ -4,12 +4,9 @@ import json
 import codecs
 import html
 import datetime
+import os, sys
 from bs4 import BeautifulSoup
 from print_progress import print_progress
-
-#PROBLEMS:
-#I can't remove random unicode things from the output file
-#ze encoding and decoding, zey do nothing
 
 #remove html tags and decodes html
 def cleanhtml(raw_html):
@@ -29,18 +26,21 @@ def getGmt():
     return datetime.datetime.fromtimestamp(response["timestamp"])
 
 def dumpJsonAry(jsons, filename):
-    file = codecs.open(filename, "w", "utf-8-sig")
+    file = open(filename, "w", encoding="utf8")
     file.write("[")
     for x in jsons:
-        file.write(json.dumps(x, indent=4, sort_keys=True))
+        # ensure ascii needed so json.dump won't print out escaped unicode
+        json.dump(x, file, indent=4, sort_keys=True, ensure_ascii=False)
         file.write(",\n")
-    file.seek(-2, 2)
-    file.write("] ")
+
+    print("Cleaning up file ending")
+    file.seek(0, os.SEEK_END)
+    pos = file.tell() - 3
+    file.seek(pos, os.SEEK_SET)
+    file.truncate()
+    file.write("]")
     file.close()
 
-#process json
-#doesnt work maybe try with smaller scale
-#problem found use "del json['_links']" instead
 def cleanResponse(json):
     del json["_links"]
     del json["comment_status"]
@@ -76,6 +76,15 @@ def updateMetadata(posts):
     return posts
 
 def main():
+    global target_count
+    if(len(sys.argv) == 1):
+        print("No post limit set, getting all posts...")
+        target_count = sys.maxsize
+    else:
+        assert int(sys.argv[1]) > 0
+        print("Post target set to ", sys.argv[1])
+        target_count = int(sys.argv[1])
+
     #all this for the sake of modularity
     endpoint = "https://tuftsdaily.com/wp-json/wp/v2/posts"
     per_page_value = 100  #1 to 100 inclusive
@@ -83,7 +92,8 @@ def main():
     offset = "&offset="
     responses = []
     iteration = 0
-    while True:
+
+    while (len(responses) < target_count):
         request = endpoint + per_page + offset + str(iteration * per_page_value)
         print("Request: ", request)
         connection = urllib.request.urlopen(request)
@@ -97,7 +107,6 @@ def main():
             #shallow copying arrays, hopefully ends out okay
             responses += response_array
             iteration += 1
-            break
     #dumps unprocessed json array to file
     # dumpJsonAry(responses, "posts_raw.json")
 
@@ -114,7 +123,9 @@ def main():
 
     responses_clean = updateMetadata(responses_clean)
 
-    dumpJsonAry(responses_clean, "posts_sample.db")
+    output_filename = "posts_raw_" + str(len(responses_clean) - 1) + "_" + datetime.datetime.strftime(getGmt(), "%Y%m%d%H%M%S") + ".json"
+    dumpJsonAry(responses_clean, output_filename)
+    print("Output file ", output_filename, " created")
 
 if __name__ == "__main__":
     main()
