@@ -68,8 +68,12 @@ def updateMetadata(posts):
 
     gmtStr = getGmt().strftime("%Y-%m-%dT%H:%M:%S")
     data = {}
-    data["posts_length"] = length
-    data["posts_gmt"] = gmtStr
+
+    #changed this to more general terms
+    # original was posts_length and posts_gmt
+
+    data["data_length"] = length
+    data["retrieve_gmt"] = gmtStr
     metadata = {}
     metadata["metadata"] = data
     posts.insert(0, metadata)
@@ -86,7 +90,7 @@ def main():
         target_count = int(sys.argv[1])
 
     #all this for the sake of modularity
-    endpoint = "https://tuftsdaily.com/wp-json/wp/v2/posts"
+    endpoint = "https://tuftsdaily.com/wp-json/wp/v2/categories"
     per_page_value = 100  #1 to 100 inclusive
     per_page = "?per_page=" + str(per_page_value)
     offset = "&offset="
@@ -107,24 +111,28 @@ def main():
             #shallow copying arrays, hopefully ends out okay
             responses += response_array
             iteration += 1
+            break
     #dumps unprocessed json array to file
     # dumpJsonAry(responses, "posts_raw.json")
 
     response_length = len(responses)
     index = 0
     #clean up jsons
-    responses_clean = []
-    for x in responses:
-        x = cleanResponse(x)
-        if (x["content_text"] != "\n"):
-            responses_clean.append(x)
-        index += 1
-        print_progress(index, response_length, prefix = "Cleaning up jsons: ", bar_length=80)
-
-    responses_clean = updateMetadata(responses_clean)
-
-    output_filename = "posts_raw_" + str(len(responses_clean) - 1) + "_" + datetime.datetime.strftime(getGmt(), "%Y%m%d%H%M%S") + ".json"
-    dumpJsonAry(responses_clean, output_filename)
+    # responses_clean = []
+    # for x in responses:
+    #     # x = cleanResponse(x)
+    #     if (x["content_text"] != "\n"):
+    #         responses_clean.append(x)
+    #     index += 1
+    #     print_progress(index, response_length, prefix = "Cleaning up jsons: ", bar_length=80)
+    #
+    # responses_clean = updateMetadata(responses_clean)
+    responses = updateMetadata(responses)
+    #
+    # output_filename = "posts_raw_" + str(len(responses_clean) - 1) + "_" + datetime.datetime.strftime(getGmt(), "%Y%m%d%H%M%S") + ".json"
+    output_filename = "categories.json"
+    # dumpJsonAry(responses_clean, output_filename)
+    dumpJsonAry(responses, output_filename)
     print("Output file ", output_filename, " created")
 
 if __name__ == "__main__":
