@@ -1,0 +1,412 @@
+[{
+    "metadata": {
+        "data_length": 10,
+        "retrieve_gmt": "2018-01-29T22:07:20"
+    }
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/11461"
+            }
+        ],
+        "up": [
+            {
+                "embeddable": true,
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/24"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=11461"
+            }
+        ]
+    },
+    "count": 125,
+    "description": "",
+    "id": 11461,
+    "link": "https://tuftsdaily.com/category/opinion/editorial/",
+    "meta": [],
+    "name": "Editorial",
+    "parent": 24,
+    "slug": "editorial",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/22252"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=22252"
+            }
+        ]
+    },
+    "count": 6,
+    "description": "",
+    "id": 22252,
+    "link": "https://tuftsdaily.com/category/investigative/",
+    "meta": [],
+    "name": "Investigative",
+    "parent": 0,
+    "slug": "investigative",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/36"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=36"
+            }
+        ]
+    },
+    "count": 4278,
+    "description": "",
+    "id": 36,
+    "link": "https://tuftsdaily.com/category/news/",
+    "meta": [],
+    "name": "News",
+    "parent": 0,
+    "slug": "news",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/38"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=38"
+            }
+        ]
+    },
+    "count": 661,
+    "description": "",
+    "id": 38,
+    "link": "https://tuftsdaily.com/category/features/",
+    "meta": [],
+    "name": "Features",
+    "parent": 0,
+    "slug": "features",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/2"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=2"
+            }
+        ]
+    },
+    "count": 3974,
+    "description": "",
+    "id": 2,
+    "link": "https://tuftsdaily.com/category/arts/",
+    "meta": [],
+    "name": "Arts",
+    "parent": 0,
+    "slug": "arts",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/24"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=24"
+            }
+        ]
+    },
+    "count": 2972,
+    "description": "",
+    "id": 24,
+    "link": "https://tuftsdaily.com/category/opinion/",
+    "meta": [],
+    "name": "Opinion",
+    "parent": 0,
+    "slug": "opinion",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/27"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=27"
+            }
+        ]
+    },
+    "count": 4511,
+    "description": "",
+    "id": 27,
+    "link": "https://tuftsdaily.com/category/sports/",
+    "meta": [],
+    "name": "Sports",
+    "parent": 0,
+    "slug": "sports",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/231"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=231"
+            }
+        ]
+    },
+    "count": 1531,
+    "description": "",
+    "id": 231,
+    "link": "https://tuftsdaily.com/category/columns/",
+    "meta": [],
+    "name": "Columns",
+    "parent": 0,
+    "slug": "columns",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/232"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=232"
+            }
+        ]
+    },
+    "count": 51,
+    "description": "",
+    "id": 232,
+    "link": "https://tuftsdaily.com/category/multimedia/",
+    "meta": [],
+    "name": "Multimedia",
+    "parent": 0,
+    "slug": "multimedia",
+    "taxonomy": "category"
+},
+{
+    "_links": {
+        "about": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/taxonomies/category"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories"
+            }
+        ],
+        "curies": [
+            {
+                "href": "https://api.w.org/{rel}",
+                "name": "wp",
+                "templated": true
+            }
+        ],
+        "self": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/categories/1"
+            }
+        ],
+        "wp:post_type": [
+            {
+                "href": "https://tuftsdaily.com/wp-json/wp/v2/posts?categories=1"
+            }
+        ]
+    },
+    "count": 21406,
+    "description": "",
+    "id": 1,
+    "link": "https://tuftsdaily.com/category/archives/",
+    "meta": [],
+    "name": "Archives",
+    "parent": 0,
+    "slug": "archives",
+    "taxonomy": "category"
+}]

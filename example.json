@@ -1,0 +1,55 @@
+/*
+    Each entry looks approximately like the one below
+*/
+{
+    "analysis": {                                
+        "entitiy_sentiments": [                     //array of entity and their sentiment information; gotten through the entity sentiment method
+            {
+                "name": "Tufts Community Union",
+                "salience": 0.5066384,
+                "sentiment_megnitude": 4.3,
+                "sentiment_score": -0.1,
+                "type": "ORGANIZATION"
+            },
+            {
+                "name": "students",
+                "salience": 0.06866171,
+                "sentiment_megnitude": 0,
+                "sentiment_score": 0,
+                "type": "PERSON"
+            },
+            {
+                "name": "administration",
+                "salience": 0.041664734,
+                "sentiment_megnitude": 0.1,
+                "sentiment_score": 0,
+                "type": "ORGANIZATION"
+            }
+        ],
+        "sentiment_magnitude": 11.7,                //sentiment magnitude and score of the entire article; gotten through the sentiment analysis method 
+        "sentiment_score": -0.2
+    },                                              //the rest of these are information about the post itself
+    "author": 4443,                                 //author id (queryable from the Tufts Daily website)
+    "categories": [                                 //categories of the post; e.g. Featured, News, Sports...
+        24                                          //the names of what the id stands for can be obtained from the Tufts Daily server 
+    ],
+    "content_text": "Last week at the Tufts Community Union (TCU) Budget Transparency Town Hall students had an opportunity to hear from administrators about the state of finances at Tufts, specifically as they relate to tuition affordability and the deficit. Empty rhetoric about budgets being “too complicated to understand fully” and skewed statistics from the administration left many students feeling upset and deceived. Panelists deflected student questions, gave presentations with little substance and espoused broken promises. There was a clear disconnect between student experiences struggling to stay afloat at Tufts and the resigned attitudes about budgets and tuition that the administration professed.\nAdministrators are removed from the reality of being a low-income student attending Tufts. As students shared concerns about being thousands of dollars in debt or opting out of meal plans all together to save money, administrators laughed off student questions about paying for school as a low-income student, dodged answers about community budgeting and continuously proclaimed the lie that Tufts “meets 100 percent of demonstrated financial need.”\nThe $10 million in outstanding debt Tufts is now in is a reflection of mismanagement of money and poor revenue predictions on the part of the administration, according to Dean Glaser’s comments last Tuesday. Next year when our tuition goes up, we’re going to be footing the bill for their mistakes. Provost Harris shared that the administration is aware of and “working to close the gap” between financial aid given and actual student need. Despite the number of Powerpoint slides about how Tufts compares to a conveniently selected group of peer institutions, there were no slides about this “work.” Where are the initiatives to help close that gap they claim to be so aware of?\nThis town hall was paying lip service to a massive problem that the administration and the industry as a whole is trying to hide from. We’re talking about the difference between getting into Tufts or being rejected because of our financial need; about paying attention to lecture after lunch at Dewick, or skipping that meal; about stepping into a career after college, or paying off hundreds of thousands of dollars of debt well into the future; about going to health services the day the fever hits, or living with pneumonia for months because you can’t afford the copays; it’s about spending an evening studying for tomorrow’s test, or coming home from your job at 1 a.m. to a pile of homework.\nThe higher education system in this country is failing. College is a place reserved for the elite few. Student debt stands at over $13 billion and impacts 40 million borrowers in the United States. An industry has emerged that makes money off of lending students and families the money to pay for the cost gap created by insufficient financial aid. The interest that we pay on these private loans goes straight to bankers and investors. Many Tufts board members are investment bankers.\nWe will continue to fight against looming threats of tuition hikes, and hold Tufts accountable to its past, current and future students. No one should be rejected from college because of how much their family has, be forced to transfer or drop out, or have to go without groceries to pay for rent after graduation because of the magnitude of student loans they were forced to take out as an 18-year-old. To find ways to plug-in to this fight in the upcoming year, sign up for our e-list. Let’s work together to make Tufts truly accessible for those who can’t pay $71,000/year.\nLINK TO E-LIST: https://docs.google.com/forms/d/e/1FAIpQLSfFPY2MCpqepGFChvhk33aHDwjuKdiJ2XGVSnqBmX-h_I57cA/viewform?usp=sf_link\n",
+    "date": "2017-12-16T18:53:28",
+    "date_gmt": "2017-12-16T23:53:28",
+    "excerpt_text": "Last week at the Tufts Community Union (TCU) Budget Transparency Town Hall students had an opportunity to hear from administrators about the state of finances at Tufts, specifically as they relate to tuition affordability and the deficit. Empty rhetoric about budgets being “too complicated to understand fully” and skewed statistics from the administration left many […]\n",
+    "featured_media": 0,
+    "guid": "http://tuftsdaily.com/?p=184715",
+    "id": 184715,
+    "link": "https://tuftsdaily.com/opinion/2017/12/16/op-ed-administration-grossly-removed-effect-budget-policies-students/",
+    "modified": "2017-12-16T20:22:32",
+    "modified_gmt": "2017-12-17T01:22:32",
+    "slug": "op-ed-administration-grossly-removed-effect-budget-policies-students",     //these are like keywords of the article I think
+    "tags": [       
+        343,
+        5432,
+        7514,
+        15911,
+        22294
+    ],
+    "title_text": "Op-Ed: Administration grossly removed from the effect budget policies have on students"
+}
