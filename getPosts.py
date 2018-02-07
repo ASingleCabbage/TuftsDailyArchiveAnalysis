@@ -1,4 +1,8 @@
 #Gets all responses on the Tufts Daily website using Wordpress REST API
+
+#NOTICE: RECENTLY MODIFIED TO GET ALL CATEGORIES, HOPE I STILL REMEMBER HOW TO
+#        CHANGE IT BACK
+
 import urllib.request
 import json
 import codecs
@@ -90,7 +94,7 @@ def main():
         target_count = int(sys.argv[1])
 
     #all this for the sake of modularity
-    endpoint = "https://tuftsdaily.com/wp-json/wp/v2/categories"
+    endpoint = "https://tuftsdaily.com/wp-json/wp/v2/users"
     per_page_value = 100  #1 to 100 inclusive
     per_page = "?per_page=" + str(per_page_value)
     offset = "&offset="
@@ -111,7 +115,7 @@ def main():
             #shallow copying arrays, hopefully ends out okay
             responses += response_array
             iteration += 1
-            break
+            #break
     #dumps unprocessed json array to file
     # dumpJsonAry(responses, "posts_raw.json")
 
@@ -130,7 +134,7 @@ def main():
     responses = updateMetadata(responses)
     #
     # output_filename = "posts_raw_" + str(len(responses_clean) - 1) + "_" + datetime.datetime.strftime(getGmt(), "%Y%m%d%H%M%S") + ".json"
-    output_filename = "categories.json"
+    output_filename = "users.json"
     # dumpJsonAry(responses_clean, output_filename)
     dumpJsonAry(responses, output_filename)
     print("Output file ", output_filename, " created")

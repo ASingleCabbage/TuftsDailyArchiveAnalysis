@@ -1,3 +1,4 @@
 *.json
 *.db
 api_key
+examples/Nina_filtered_posts
